@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "aaa875af-b63e-4a2e-a171-2b56df1bea37",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"emp_id\": \"DF345\",\"company_name\": \"newwww name\",\"last_name\": \"newwww name\",\"first_name\": \"newwww name\",\"password\":\"qwertyu\",\"confirmpassword\":\"qwertyu\",\"email\":\"ssaurabh@asdas.com\"}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"password\":\"qwertyu\",\"email\":\"ssaurabh@asdas.com\"}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgot_password(check user is present)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"sdsd@sd.com\"}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/forgot_password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"forgot_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change_password",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"sdsf@sdf.com\",\"password\":\"qwertyu1\",\"confirmpassword\":\"qwertyu1\"}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/change_password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"change_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_password(when logged in)",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibWVtYmVyX2lkIjpudWxsLCJuYW1lIjoic3VwZXIgYWRtaW4iLCJlbWFpbCI6InNhdXJhYmguc0Bob21lc2Z5LmluIiwicm9sZSI6InN1cGVydXNlciIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJzZWNyZXQiOiJBU2JBMnhjanBmOHk1YVNVRnNOQjJxTjV5eW1VQlNzNmVzM3FIb0ZwR2tlYzc1UkNlQmI4Y3BLYXVHZWZ3NXF5NCIsImp3dERhdGEiOnsiZXhwaXJlc0luIjoiNTBoIn0sImlhdCI6MTU5MTg1NzEwMCwiZXhwIjoxNTkyMDM3MTAwfQ.ybLcL7lrcGAT4DEjTX_uzROF9DuwEOAROlBRv3jzgNo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"currentpassword\":\"qwertyui\",\"password\":\"qwertyu1\",\"confirmpassword\":\"qwertyu1\"}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/auth/update_password",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"auth",
+						"update_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list(user list with filters)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTI2NDEsImVtYWlsIjoic3NhdXJhYmhAYXNkYXMuY29tIiwiaWF0IjoxNjA0MTc2Nzk4LCJleHAiOjE2MDQxODAzOTh9.zq0cokupqITjAcj02mRoDfriSg8uHdfAAG6Zm1rDNiI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/users/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list(user list with filters)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTI2NDEsImVtYWlsIjoic3NhdXJhYmhAYXNkYXMuY29tIiwiaWF0IjoxNjA0MTc2Nzk4LCJleHAiOjE2MDQxODAzOTh9.zq0cokupqITjAcj02mRoDfriSg8uHdfAAG6Zm1rDNiI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/users/list?order=first_name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"list"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "first_name"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "autocomplete",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywibmFtZSI6Im1hZ25ldHRsIHVzZXIiLCJlbWFpbCI6InNhdXJhYmguc0Bob21lc2Z5LmluIiwicm9sZSI6Im1hZ25ldHRsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInNlY3JldCI6IkFTYkEyeGNqcGY4eTVhU1VGc05CMnFONXl5bVVCU3M2ZXMzcUhvRnBHa2VjNzVSQ2VCYjhjcEthdUdlZnc1cXk0Iiwiand0RGF0YSI6eyJleHBpcmVzSW4iOiI1MGgifSwiaWF0IjoxNTg5OTc0NTU1LCJleHAiOjE1OTAxNTQ1NTV9.F270Au_yKqQbJEwX_LOl6vzHDLOjDbOANBRTBq6GNuI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/api/users/autocomplete/customer?q=s",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"autocomplete",
+						"customer"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "s"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
