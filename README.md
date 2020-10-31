@@ -15,18 +15,30 @@ To check the linting.
 ## use the postman collection and database file for quick setup which are docs folder
 
 Tables- users,employee
+
 Total APIs : 10
+
 APIs:
  - register
+ 
  -login
+ 
  -update password(only after login)
+ 
  -update password(not login)
+ 
  -check user for password change()
+ 
  -autocomplete(check with first_name only)
+ 
  -logout
+ 
  -user listing(filters-firstName,lastName,empId,companyName,order with pagination )
+ 
  -fetch user data with id
+ 
  -fetch employee details of logged in user
+
 
 Database used: mysql
 
